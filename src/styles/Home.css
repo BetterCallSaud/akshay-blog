@@ -1,0 +1,49 @@
+.navbar {
+  @apply flex bg-slate-900 text-white items-center py-6;
+}
+
+.navbarLeft {
+  @apply font-bold text-4xl ml-4 w-full;
+}
+
+.navbarRight {
+  @apply w-auto flex items-end mr-7;
+}
+.navbarRight a {
+  @apply px-3 mx-4 hover:font-medium hover:shadow-slate-200 hover:underline  hover:underline-offset-8;
+}
+
+.heroContainer {
+  @apply text-white bg-[url("../images/heroImage.jpg")] h-96 bg-cover;
+}
+.heroContainer h1 {
+  @apply text-6xl font-medium ml-10 top-64 relative;
+}
+.heroContainer p {
+  @apply text-2xl ml-12 top-64 relative;
+}
+
+.shortBio {
+  @apply mx-14 my-20;
+}
+.shortBio h1 {
+  @apply text-left text-5xl mb-8;
+}
+.shortBio li {
+  @apply flex w-2/3 text-2xl justify-center p-2 my-3 rounded-lg text-white transition ease-in-out hover:translate-y-4 hover:brightness-125 duration-300;
+}
+
+.curiositiesSection {
+  @apply bg-slate-800 text-white p-10;
+}
+
+.ideasSection {
+  @apply bg-blue-400 text-white p-10;
+}
+
+.reflectionsSection {
+  @apply bg-orange-400 text-slate-900 p-10;
+}
+.reflectionsSection p {
+  @apply my-4
+}
