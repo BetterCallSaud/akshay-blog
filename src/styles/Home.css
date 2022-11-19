@@ -23,27 +23,52 @@
   @apply text-2xl ml-12 top-64 relative;
 }
 
-.shortBio {
-  @apply mx-14 my-20;
-}
 .shortBio h1 {
-  @apply text-left text-5xl mb-8;
+  @apply text-center text-5xl mb-8;
 }
-.shortBio li {
-  @apply flex w-2/3 text-2xl justify-center p-2 my-3 rounded-lg text-white transition ease-in-out hover:translate-y-4 hover:brightness-125 duration-300;
+.shortBio section {
+  @apply flex w-full text-8xl justify-center items-center py-20 font-black bg-cover;
+  text-shadow: 3px 3px 3px black;
+  height: 125vh;
+}
+#Investor {
+  background-image: url("../images/investor.gif");
+}
+#Bibliophile {
+  background-image: url("../images/bibliophile.gif");
+}
+#Blogger {
+  background-image: url("../images/blogger.gif");
+}
+#Yogi {
+  background-image: url("../images/yogi.gif");
+}
+#MusicLover {
+  background-image: url("../images/musicLover.gif");
+}
+#Explorer {
+  background-image: url("../images/explorer.gif");
 }
 
-.curiositiesSection {
-  @apply bg-slate-800 text-white p-10;
+/*--- ScrollFade Specific ---*/
+
+.scrollFade {
+	opacity: 1;
+	pointer-events: all;
 }
 
-.ideasSection {
-  @apply bg-blue-400 text-white p-10;
+.scrollFade--hidden {
+	opacity: 0;
+	pointer-events: none;
 }
 
-.reflectionsSection {
-  @apply bg-orange-400 text-slate-900 p-10;
+.scrollFade--visible {
+	opacity: 1;
+	pointer-events: all;
 }
-.reflectionsSection p {
-  @apply my-4
+
+.scrollFade--animate {
+	transition: opacity 0.4s ease-in-out;
 }
+
+/*------*/
