@@ -14,7 +14,8 @@
 }
 
 .heroContainer {
-  @apply text-white bg-[url("../images/heroImage.jpg")] h-96 bg-cover;
+  @apply text-white bg-[url("../images/heroImage.jpg")] bg-cover;
+  height: 35rem;
 }
 .heroContainer h1 {
   @apply text-6xl font-medium ml-10 top-64 relative;
@@ -23,31 +24,14 @@
   @apply text-2xl ml-12 top-64 relative;
 }
 
-.shortBio h1 {
-  @apply text-center text-5xl mb-8;
+.shortBio {
+  @apply flex w-full;
+  background-image: url("../images/AttributesVideoSequence.mp4");
 }
-.shortBio section {
-  @apply flex w-full text-8xl justify-center items-center py-20 font-black bg-cover;
-  text-shadow: 3px 3px 3px black;
-  height: 125vh;
-}
-#Investor {
-  background-image: url("../images/investor.gif");
-}
-#Bibliophile {
-  background-image: url("../images/bibliophile.gif");
-}
-#Blogger {
-  background-image: url("../images/blogger.gif");
-}
-#Yogi {
-  background-image: url("../images/yogi.gif");
-}
-#MusicLover {
-  background-image: url("../images/musicLover.gif");
-}
-#Explorer {
-  background-image: url("../images/explorer.gif");
+
+.fester {
+  font-family: 'Fester';
+  font-weight: bold;
 }
 
 /*--- ScrollFade Specific ---*/
@@ -68,7 +52,7 @@
 }
 
 .scrollFade--animate {
-	transition: opacity 0.4s ease-in-out;
+	transition: opacity 1s ease-in-out;
 }
 
 /*------*/

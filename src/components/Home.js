@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
-
 import { Navbar, Footer, WWContentCard } from "./PageComponents";
+
+import "../styles/Home.css";
+import VideoSeq from "../images/AttributesVideoSequence.mp4";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -83,22 +84,14 @@ function HomePage() {
     <div className="homeContainer">
       <Navbar />
       <div id="HeroContainer" className="heroContainer">
-        <h1>welcome to my world!</h1>
-        <p>reflect upon ideas. embark on adventures.</p>
+        <h1>Welcome to My world!</h1>
+        <p>Reflect upon ideas. Embark on adventures.</p>
       </div>
       <div id="ShortBio" className="shortBio">
-        {/* <h1 className="mb-20">Akshay Anjana is...</h1> */}
-        <div className="flex flex-col items-center">
-          <section id="Investor" className="text-white bg-green-500 scrollFade">Investor</section>
-          <section id="Bibliophile" className="text-white bg-slate-900 scrollFade">Bibliophile</section>
-          <section id="Blogger" className="text-white bg-blue-600 scrollFade">Blogger</section>
-          <section id="Yogi" className="text-white bg-orange-500 scrollFade">Yogi</section>
-          <section id="MusicLover" className="text-white bg-purple-900 scrollFade">Music Lover</section>
-          <section id="Explorer" className="text-white bg-black  scrollFade">Explorer</section>
-        </div>
+        <video src={VideoSeq} autoPlay muted loop></video>
       </div>
-      <div id="WisdomWall" className="bg-blue-800 py-20 text-white">
-        <h1 className="text-center text-5xl underline underline-offset-6 mb-24">
+      <div id="WisdomWall" className="bg-slate-900 py-20 text-white">
+        <h1 className="scrollFade fester text-center text-5xl underline underline-offset-6 mb-24">
           Wisdom Wall
         </h1>
         <div className="flex">
@@ -106,10 +99,10 @@ function HomePage() {
           <div className="flex-1 flex flex-col items-center justify-center">
             <h1 className="mb-6 text-3xl">Want more wisdom?</h1>
             <Link
-              className="bg-blue-200 p-2 rounded-2xl text-black font-black border-blue-400 border-2 hover:scale-125 transition-all transition-200"
+              className="bg-red-600 p-2 rounded-2xl text-white font-black border-red-400 border-2 tracking-widest hover:scale-125 transition-all transition-200"
               to="/wisdom"
             >
-              CLICK HERE
+              READ
             </Link>
           </div>
         </div>
@@ -118,7 +111,7 @@ function HomePage() {
         id="Subscribe"
         className="py-20 text-black flex flex-col justify-center text-center"
       >
-        <h1 className="text-center text-5xl underline underline-offset-6 mb-12">
+        <h1 className="scrollFade fester text-center text-5xl underline underline-offset-6 mb-12">
           Subscribe
         </h1>
         <p>

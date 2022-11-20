@@ -43,12 +43,12 @@ function WWContentCard() {
     
     return (
       <div className="flex-1 flex flex-col justify-left mx-12">
-        <section className="bg-blue-100 text-black p-10 rounded-lg text-xl italic">
+        <section className="text-white p-10 rounded-lg text-xl italic">
           People resist change because they rather stick to the known devil than
           pursue the unknown angel. Familiarity breeds comfort and inertia.
         </section>
         <div className="font-bold">
-          <p className="text-right pr-2 pt-2">{date.toDateString()}</p>
+          <p className="text-left pl-10">{date.toDateString()}</p>
         </div>
       </div>
     );
