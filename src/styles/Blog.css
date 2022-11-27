@@ -1,0 +1,10 @@
+.blogHeroContainer {
+    @apply bg-[url("../images/blogHeroImage.jpg")] bg-cover;
+    height: 35rem;
+}
+.blogHeroContainer h1 {
+    @apply text-6xl font-medium ml-12 top-64 relative;
+  }
+.blogHeroContainer p {
+    @apply text-2xl ml-12 top-64 relative;
+}
