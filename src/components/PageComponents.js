@@ -13,8 +13,8 @@ function Navbar() {
         <Link to="/blog">
           <h2>Blog</h2>
         </Link>
-        <Link to="/contact-me">
-          <h2>Contact</h2>
+        <Link to="/connect">
+          <h2>Connect</h2>
         </Link>
         <Link to="/about">
           <h2>About</h2>
@@ -31,7 +31,7 @@ function Footer() {
       <p>{"//"}</p>
       <Link to="/blog">Blog</Link>
       <p>{"//"}</p>
-      <Link to="/contact">Contact</Link>
+      <Link to="/connect">Connect</Link>
       <p>{"//"}</p>
       <Link to="/about">About</Link>
     </footer>
