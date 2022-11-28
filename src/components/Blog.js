@@ -41,7 +41,7 @@ export default function Blog() {
       >
         <h1>Blog.</h1>
         <br />
-        <p>Unschooling, wisdom and principles</p>
+        <p>Unschooling, Wisdom and Principles</p>
         <p>for a good life</p>
       </div>
       <div
