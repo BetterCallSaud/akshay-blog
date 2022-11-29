@@ -45,13 +45,13 @@ export default function Blog() {
         <p>for a good life</p>
       </div>
       <div
-        className="m-8 blog-container text-slate-800"
-        style={{ fontFamily: "Noto Serif" }}
+        className="m-8 blog-container text-slate-900"
+        style={{ fontFamily: "Spectral" }}
       >
         <h1 className="text-4xl text-center underline underline-offset-8 text-slate-900 font-bold mb-20" style={{ fontFamily: 'Poppins' }}>
           Blog
         </h1>
-        <ul className="w-1/2">
+        <ul className="w-1/2 max-sm:w-full max-md:w-full">
           {posts}
         </ul>
       </div>

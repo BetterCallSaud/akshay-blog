@@ -10,18 +10,18 @@
   @apply w-auto flex items-end mr-7;
 }
 .navbarRight a {
-  @apply px-3 mx-4 hover:font-medium hover:shadow-slate-200 hover:underline  hover:underline-offset-8;
+  @apply px-3 mx-4 hover:font-medium hover:shadow-slate-200 hover:underline  hover:underline-offset-8 md:p-4 py-2 block max-sm:mx-2;
 }
 
 .heroContainer {
-  @apply text-white bg-[url("../images/heroImage.jpg")] bg-cover;
+  @apply text-white flex flex-col w-full bg-[url("../images/heroImage.jpg")] bg-cover max-md:bg-[url("../images/smallHeroImage.jpg")];
   height: 35rem;
 }
 .heroContainer h1 {
-  @apply text-6xl font-medium ml-10 top-64 relative;
+  @apply text-6xl font-medium ml-10 top-64 relative max-md:text-4xl max-md:text-center max-md:ml-0;
 }
 .heroContainer p {
-  @apply text-2xl ml-12 top-64 relative;
+  @apply text-2xl ml-12 top-64 relative max-md:text-xl max-md:text-center max-md:ml-0;
 }
 
 .shortBio {
