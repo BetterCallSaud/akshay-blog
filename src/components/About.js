@@ -21,8 +21,8 @@ export default function About() {
             />
           </div>
           <div className="mr-6 w-1/2 h-auto flex-1 text-blue-900 text-2xl flex flex-col justify-center max-sm:text-lg max-sm:mr-0 max-sm:w-full max-sm:font-bold">
-            Hello World! I am Akshay Anjana. I am from Rajasthan India. If we
-            look at formal education I am a commerce graduate. I am a 22 years
+            Hello World! I am Akshay Anjana. I am from Rajasthan, India. If we
+            look at formal education, I am a commerce graduate. I am a 22 years
             old guy who is highly interested and curious about Reading, Writing,
             Music, Investing & Entrepreneurship.
           </div>
@@ -35,7 +35,7 @@ export default function About() {
             business and life. Which was a very different experience for me.
             There was a personal wish of mine, back then of start writing
             something. I in an excitement bought a domain name and tried
-            designing the blog my self. There came point when I realised what
+            designing the blog my self. There came a point when I realised what
             will I write about😅, who will read it and why will they read it.
             Then the motivation suddenly faded away in a matter of minutes and
             reality hit me hard 😅. So I closed everything and said to myself
