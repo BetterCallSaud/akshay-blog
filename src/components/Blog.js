@@ -1,4 +1,3 @@
-import { Component, useEffect } from "react";
 import { Navbar, BlogPost, Footer } from "../components/PageComponents";
 import { PROJECT_ID, DATASET } from "../utils";
 import "../styles/Blog.css";
