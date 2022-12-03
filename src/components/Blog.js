@@ -3,12 +3,13 @@ import { PROJECT_ID, DATASET } from "../utils";
 import "../styles/Blog.css";
 
 let posts = [];
-let QUERY = encodeURIComponent('*[_type == "post"]');
+let QUERY = encodeURIComponent('*[_type == "post"] | order(_createdAt desc)');
 let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
 fetch(PROJECT_URL)
 .then((res) => res.json())
 .then(({ result }) => {
+  console.log(result);
   // let list = document.querySelector("ul");
   if (result.length > 0) {
     let i = 1;

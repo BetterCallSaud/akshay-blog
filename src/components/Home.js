@@ -1,42 +1,38 @@
 import { Link } from "react-router-dom";
-import { Navbar, Footer, WWContentCard, SubscribeSection } from "./PageComponents";
+import {
+  Navbar,
+  Footer,
+  WWContentCard,
+  SubscribeSection,
+} from "./PageComponents";
+import { PROJECT_ID, DATASET } from "../utils";
 
 import "../styles/Home.css";
 import VideoSeq from "../images/AttributesVideoSequence.mp4";
 
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getFirestore, doc, getDoc } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+let wisdomSection = document.getElementById("wisdomSection");
+let QUERY = encodeURIComponent('*[_type == "wisdom"]');
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyA2Shy-w3syjvCTpQDtMR77LuhXSzOofSU",
-//   authDomain: "akshayblog-92830.firebaseapp.com",
-//   projectId: "akshayblog-92830",
-//   storageBucket: "akshayblog-92830.appspot.com",
-//   messagingSenderId: "902228769222",
-//   appId: "1:902228769222:web:67e6d10197e61980ea5ac7",
-//   measurementId: "G-QWFN2915HL"
-// };
+let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
-// // Initialize Firebase and database
-// const app = initializeApp(firebaseConfig);
-// const db = getFirestore(app);
+setTimeout(() => {
+  fetch(PROJECT_URL)
+    .then((res) => res.json())
+    .then(({ result }) => {
+      // let list = document.querySelector("ul");
+      if (result.length > 0) {
+        let i = 1;
+        result.forEach((wisdom) => {
+          localStorage.setItem("wisdomContent", wisdom?.wisdomContent);
+          wisdomSection.textContent = wisdom?.wisdomContent;
+          i++;
+        });
+      }
+    })
+    .catch((err) => console.error(err));
+}, 1000);
 
-// async function subscribeClickHandler() {
-//   const docRef = doc(db, "subscribers", "details");
-//   const docSnap = await getDoc(docRef);
-
-//   if (docSnap.exists())
-//     console.log(`Document data: ${docSnap.data()}`);
-//   else
-//     console.log('No such document');
-// }
-
-var fadeElements = document.getElementsByClassName('scrollFade');
+var fadeElements = document.getElementsByClassName("scrollFade");
 
 function scrollFade() {
   // var viewportBottom = window.scrollY + window.innerHeight;
@@ -45,41 +41,41 @@ function scrollFade() {
     var element = fadeElements[index];
     var rect = element.getBoundingClientRect();
 
-    var elementFourth = rect.height/4;
+    var elementFourth = rect.height / 4;
     var fadeInPoint = window.innerHeight - elementFourth;
-    var fadeOutPoint = -(rect.height/2);
+    var fadeOutPoint = -(rect.height / 2);
 
     if (rect.top <= fadeInPoint) {
-      element.classList.add('scrollFade--visible');
-      element.classList.add('scrollFade--animate');
-      element.classList.remove('scrollFade--hidden');
+      element.classList.add("scrollFade--visible");
+      element.classList.add("scrollFade--animate");
+      element.classList.remove("scrollFade--hidden");
     } else {
-      element.classList.remove('scrollFade--visible');
-      element.classList.add('scrollFade--hidden');
+      element.classList.remove("scrollFade--visible");
+      element.classList.add("scrollFade--hidden");
     }
 
     if (rect.top <= fadeOutPoint) {
-      element.classList.remove('scrollFade--visible');
-      element.classList.add('scrollFade--hidden');
+      element.classList.remove("scrollFade--visible");
+      element.classList.add("scrollFade--hidden");
     }
   }
 }
 
-document.addEventListener('scroll', scrollFade);
-window.addEventListener('resize', scrollFade);
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("scroll", scrollFade);
+window.addEventListener("resize", scrollFade);
+document.addEventListener("DOMContentLoaded", function () {
   scrollFade();
 });
 
 document.addEventListener("scroll", scrollFade);
 window.addEventListener("scroll", scrollFade);
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   scrollFade();
 });
 
 function HomePage() {
   document.title = "Akshay Arya | Home";
-  window.scrollTo(0,0); 
+  window.scrollTo(0, 0);
   return (
     <div className="homeContainer">
       <Navbar />
@@ -95,9 +91,16 @@ function HomePage() {
           Wisdom Wall
         </h1>
         <div className="flex">
-          <WWContentCard />
+          <div className="flex-1 flex flex-col justify-left mx-12">
+            <section id="wisdomSection" className="text-white mb-10 rounded-lg text-xl italic max-sm:text-sm">{localStorage.getItem("wisdomContent")}</section>
+            <div className="font-bold">
+              <p className="text-left">{new Date().toDateString()}</p>
+            </div>
+          </div>
           <div className="flex-1 flex flex-col items-center justify-center mr-5">
-            <h1 className="mb-6 text-3xl max-sm:text-xl max-sm:text-center">Want more wisdom?</h1>
+            <h1 className="mb-6 text-3xl max-sm:text-xl max-sm:text-center">
+              Want more wisdom?
+            </h1>
             <Link
               className="bg-red-600 p-2 rounded-2xl text-white font-black border-red-400 border-2 tracking-widest hover:scale-125 transition-all transition-200"
               to="/wisdom"
@@ -107,7 +110,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <SubscribeSection/>
+      <SubscribeSection />
       <Footer />
     </div>
   );

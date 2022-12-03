@@ -82,14 +82,13 @@ function Footer() {
   );
 }
 
-function WWContentCard() {
+function WWContentCard(props) {
   let date = new Date();
 
   return (
     <div className="flex-1 flex flex-col justify-left mx-12">
       <section className="text-white mb-10 rounded-lg text-xl italic max-sm:text-sm">
-        People resist change because they rather stick to the known devil than
-        pursue the unknown angel. Familiarity breeds comfort and inertia.
+        {props.wisdom}
       </section>
       <div className="font-bold">
         <p className="text-left">{date.toDateString()}</p>
